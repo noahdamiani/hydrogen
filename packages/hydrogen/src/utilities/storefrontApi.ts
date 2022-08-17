@@ -31,11 +31,11 @@ export function getStorefrontApiRequestHeaders({
 
     if (!secretToken && !__HYDROGEN_DEV__) {
       log.error(
-        'No secret Shopify storefront API token was defined. This means your app will be rate limited!\nSee how to add the token: '
+        'No secret Storefront API token was defined. This means your app will be rate limited!\nLearn how to add the token: '
       );
     } else if (secretToken) {
       log.warn(
-        'The private shopify storefront API token was loaded implicitly by an environment variable. This is deprecated, and instead the variable should be defined directly in the Hydrogen Config.\nFor more information: '
+        'The private delegate access token for the Storefront API was loaded implicitly by an environment variable. This is deprecated. Define the variable directly in the Hydrogen config instead.\nFor more information, refer to: '
       );
     }
   }
@@ -46,11 +46,11 @@ export function getStorefrontApiRequestHeaders({
 
     if (!storefrontId && !__HYDROGEN_DEV__) {
       log.warn(
-        'No storefrontId was defined. This means the analytics on your admin dashboard will be broken!\nSee how to fix it: '
+        'No storefrontId was defined. This breaks the analytics dashboard in the Shopify admin!\nLearn how to fix it: '
       );
     } else if (storefrontId) {
       log.warn(
-        'The storefrontId was loaded implicitly by an environment variable. This is deprecated, and instead the variable should be defined directly in the Hydrogen Config.\nFor more information: '
+        'The storefrontId was loaded implicitly by an environment variable. This is deprecated. Define the variable in the Hydrogen config instead.\nFor more information: '
       );
     }
   }
